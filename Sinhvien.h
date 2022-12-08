@@ -24,8 +24,6 @@ void timsvbangMa(Sinh_vien *a,int n);
  
 void sapxepdiem(Sinh_vien *a,int n);
 
-//void inradiemsx(Sinh_vien *a, int n);
-
 void ghidssv(Sinh_vien *a,int n);
 
 void docdssv(Sinh_vien *a,int *n);

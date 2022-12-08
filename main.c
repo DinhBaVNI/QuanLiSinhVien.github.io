@@ -10,15 +10,15 @@ int main(int argc, char *argv[]) {
 	Sinh_vien ds[100];
 	do {
 		system("cls");
-		printf("\n-----MENU-----");		
-		printf("\n 1. Nhap thong tin sinh vien");
-		printf("\n 2. Hien thi thong tin sinh vien");
-		printf("\n 3. Tim thong tin sinh vien bang ma sinh vien");
-		printf("\n 4. Sap xep theo diem giam dan");
-		printf("\n 5. Ghi thong tin sinh vien vao tep");
-		printf("\n 6. Doc thong tin sinh vien trong tep");
-		printf("\n 0. Thoat");
-		printf("\n--------------");
+		printf("\n----=======MENU=======----");		
+		printf("\n =====1. Nhap thong tin sinh vien =====");
+		printf("\n =====2. Hien thi thong tin sinh vien =====");
+		printf("\n =====3. Tim thong tin sinh vien bang ma sinh vien =====");
+		printf("\n =====4. Sap xep theo diem giam dan =====");
+		printf("\n =====5. Ghi thong tin sinh vien vao tep =====");
+		printf("\n =====6. Doc thong tin sinh vien trong tep =====");
+		printf("\n =====0. Thoat=====");
+		printf("\n-------=============-------");
 		printf("\n Ban hay chon mot cong viec: ");scanf("%d",&chon);
 		switch (chon)
 		{

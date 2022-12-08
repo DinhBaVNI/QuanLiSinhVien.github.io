@@ -5,13 +5,13 @@ void nhapsv(Sinh_vien *h)
 {
 	fflush(stdin);
 	printf("\nNhap ma sinh vien:");gets(h->masv);
-	printf("\n Nhap ho ten:");gets(h->hoten);
-	nhapDiem(&h->mh);
+	printf("\nNhap ho ten:");gets(h->hoten);
 	inputNgay(&h->ns);
 	printf("\nNhap gioi tinh (0-nu,1-nam):");scanf("%d",&h->gt);
 	fflush(stdin);
 	printf("\nNhap que quan:");gets(h->quequan);
 	printf("\nNhap lop:");gets(h->lop);
+	nhapDiem(&h->mh);
 }
 
 void hienthisv(Sinh_vien h)
@@ -30,18 +30,18 @@ void nhapdssv(Sinh_vien *a, int *n)
 	int i;
 	printf("So luong sinh vien muon nhap:");scanf("%d",n);
 	for (i=0;i<*n;i++){
-		printf("\n Sinh vien vien thu %d:",i+1);
+		printf("Sinh vien thu %d:\n",i+1);
 		nhapsv(&a[i]);
 	}
-	printf("\nThanh cong nhap vao du lieu ...");
+	printf("\nThanh cong nhap vao du lieu...");
 }
 
 void hienthidssv(Sinh_vien *a,int n)
 {
 	int i;
-	printf("\nCac sinh vien da nhap:");
+	printf("Cac sinh vien da nhap:\n");
 	for (i=0;i<n;i++){
-		printf("\nSinh vien thu %d:\n",i+1);
+		printf("Sinh vien thu %d:\n",i+1);
 		hienthisv(a[i]);
 	}
 }
@@ -58,27 +58,19 @@ void timsvbangMa(Sinh_vien *a,int n){
 }
 
  
-void sapxepdiem(Sinh_vien a[],int n){
+void sapxepdiem(Sinh_vien *a,int n){
+	Sinh_vien tmp;
 	int i, j;
 	for (i=0; i<n-1; i++){
-		for(j=n-1; j<n; j--){
-			if(a[j].mh.dtb> a[j-1].mh.dtb){
-				Sinh_vien sx = a[j];
-				a[j] = a[j-1];
-				a[j-1] = sx;			
+		for(j=i+1; j<n; j++){
+			if(a[i].mh.dtb > a[j].mh.dtb){
+				tmp = a[i];
+				a[i] = a[j];
+				a[j] = tmp;			
 			}
 		}
 	}
-	printf("%.2f" ,a[i]);
 }
-
-//void indiemsx(Sinh_vien *a, int n){
-//	int i;
-//	for(i=0; i< n; i++){
-//				
-//	}
-//
-//}
 
 void ghidssv(Sinh_vien *a,int n){
 	char tentep[30]; int i;
@@ -87,7 +79,6 @@ void ghidssv(Sinh_vien *a,int n){
 	printf("\nNhap ten tep:");gets(tentep);
 	if ((fp=fopen(tentep,"w"))==NULL){
 		printf("\nTep loi roi!");
-//		exit(1);
 	}
 	for (i=0;i<n;i++){				
 		fprintf(fp,"%s\n",a[i].masv);
@@ -109,7 +100,6 @@ void docdssv(Sinh_vien *a,int *n){
 	printf("\nNhap ten tep muon doc:");gets(tentep);
 	if ((fp=fopen(tentep,"r"))==NULL){
 		printf("\nTep loi roi!");
-//		exit(1);
 	}
 	*n=0;
 	while (fgets(temp.masv,10,fp) != NULL){   	

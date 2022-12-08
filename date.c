@@ -3,7 +3,7 @@
 
 void inputNgay(Date *d)  //dung con tro de luu vao bien 
 {
-	printf("Nhap ngay thang nam:");
+	printf("\nNhap ngay/thang/nam:");
 	scanf("%d%d%d",&d->ngay,&d->thang,&d->nam);
 }
 

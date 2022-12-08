@@ -1,8 +1,7 @@
 #include "diem.h"
 
 void nhapDiem(Diem *f){
-	printf("Nhap diem toan: ");
-	scanf("%f",&f->toan);
+	printf("\nNhap diem toan: ");scanf("%f",&f->toan);
 	printf("\nNhap diem van: ");scanf("%f",&f->van);
 	printf("\nNhap diem hoa: ");scanf("%f",&f->hoa);
 	printf("\nNhap diem li: ");scanf("%f",&f->li);
@@ -11,9 +10,12 @@ void nhapDiem(Diem *f){
 }
 
 void inDiem(Diem f){
-	printf("\n Toan: %.2f",f.toan);
-	printf("\n Van: %.2f",f.van);
-	printf("\n Hoa: %.2f",f.hoa);
-	printf("\n Sinh: %.2f",f.sinh);	
-	printf("\n Diemtb: %.2f",f.dtb);	
+	printf("\tToan\t Van\t Hoa\t Li\t Sinh\t Dtb \n");
+	printf("\t%.2f\t %.2f\t %.2f\t %.2f\t %.2f \t %.2f \n\n",f.toan,f.van,f.hoa,f.li,f.sinh,f.dtb);
+//	printf("\nToan: %.2f",f.toan);
+//	printf("\nVan: %.2f",f.van);
+//	printf("\nHoa: %.2f",f.hoa);
+//	printf("\nLi: %.2f",f.li);
+//	printf("\nSinh: %.2f",f.sinh);	
+//	printf("\nDiemtb: %.2f",f.dtb);	
 }
