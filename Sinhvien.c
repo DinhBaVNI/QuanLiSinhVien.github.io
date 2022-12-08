@@ -58,14 +58,14 @@ void timsvbangMa(Sinh_vien *a,int n){
 }
 
  
-void sapxepdiem(Sinh_vien *a,int n){
+void sapxepdiem(Sinh_vien a[],int n){
 	int i, j;
 	for (i=0; i<n-1; i++){
-		for(j=n+1; j<n; j++	){
-			if(a[i].mh.dtb> a[i+1].mh.dtb){
-				Sinh_vien sx = a[i];
-				a[i] = a[i+1];
-				a[i+1] = sx;			
+		for(j=n-1; j<n; j--){
+			if(a[j].mh.dtb> a[j-1].mh.dtb){
+				Sinh_vien sx = a[j];
+				a[j] = a[j-1];
+				a[j-1] = sx;			
 			}
 		}
 	}
